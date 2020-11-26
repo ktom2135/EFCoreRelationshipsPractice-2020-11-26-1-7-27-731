@@ -10,6 +10,7 @@ using Xunit;
 
 namespace EFCoreRelationshipsPracticeTest.ServiceTest
 {
+    [Collection("IntegrationTest")]
     public class CompanyServiceTest : TestBase
     {
         public CompanyServiceTest(CustomWebApplicationFactory<Startup> factory) : base(factory)

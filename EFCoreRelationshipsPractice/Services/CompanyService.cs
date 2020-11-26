@@ -30,8 +30,10 @@ namespace EFCoreRelationshipsPractice.Services
 
         public async Task<CompanyDto> GetById(long id)
         {
-            var foundCompanyEntity = await this.companyDbContext.Companies.
-                FirstOrDefaultAsync(companyEntity => companyEntity.Id == id);
+            var foundCompanyEntity = await this.companyDbContext.Companies
+                .Include(company => company.Employees)
+                .Include(company => company.Profile)
+                .FirstOrDefaultAsync(companyEntity => companyEntity.Id == id);
             return new CompanyDto(foundCompanyEntity);
         }
 
