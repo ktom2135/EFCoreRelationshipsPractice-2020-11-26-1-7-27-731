@@ -1,4 +1,5 @@
-﻿using EFCoreRelationshipsPractice.Dtos;
+﻿using System.Collections.Generic;
+using EFCoreRelationshipsPractice.Dtos;
 
 namespace EFCoreRelationshipsPractice.Entities
 {
@@ -20,22 +21,14 @@ namespace EFCoreRelationshipsPractice.Entities
         public string Location { get; set; }
 
         public ProfileEntity Profile { get; set; }
+
+        public List<EmployeeEntity> Employees { get; set; }
     }
 
-    public class ProfileEntity
+    public class EmployeeEntity
     {
-        public ProfileEntity()
-        {
-        }
-
-        public ProfileEntity(ProfileDto profileDto)
-        {
-            this.CertId = profileDto.CertId;
-            this.RegisteredCapital = profileDto.RegisteredCapital;
-        }
-
         public int Id { get; set; }
-        public int RegisteredCapital { get; set; }
-        public string CertId { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
