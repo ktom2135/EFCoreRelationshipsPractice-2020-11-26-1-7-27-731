@@ -10,7 +10,6 @@ namespace EFCoreRelationshipsPractice.Entities
 
         public EmployeeEntity(EmployeeDto employeeDto)
         {
-
             this.Age = employeeDto.Age;
             this.Name = employeeDto.Name;
         }
