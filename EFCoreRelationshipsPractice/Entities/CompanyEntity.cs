@@ -22,7 +22,6 @@ namespace EFCoreRelationshipsPractice.Entities
         public string Name { get; set; }
 
         public string Location { get; set; }
-
         public ProfileEntity Profile { get; set; }
 
         public List<EmployeeEntity> Employees { get; set; }

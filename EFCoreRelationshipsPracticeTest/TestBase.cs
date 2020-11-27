@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http;
 using EFCoreRelationshipsPractice;
 using EFCoreRelationshipsPractice.Repository;
@@ -23,6 +24,8 @@ namespace EFCoreRelationshipsPracticeTest
             var context = scopedServices.GetRequiredService<CompanyDbContext>();
 
             context.Companies.RemoveRange(context.Companies);
+            context.Employees.RemoveRange(context.Employees);
+            context.Profiles.RemoveRange(context.Profiles);
 
             context.SaveChanges();
         }
